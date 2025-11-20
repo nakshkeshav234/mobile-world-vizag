@@ -38,7 +38,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero section-hero">
+    <section class="hero section-hero"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-repair.png'); background-size: cover; background-position: center;">
         <!-- Particle Canvas -->
         <canvas id="particleCanvas"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.3;"></canvas>
@@ -64,22 +65,25 @@
             </div>
 
             <div class="grid grid-3">
-                <div class="card scroll-reveal" style="animation-delay: 0.1s;">
-                    <div class="card-icon">🔨</div>
+                <div class="card scroll-reveal" style="animation-delay: 0.1s; overflow: hidden;">
+                    <img src="images/screen-repair.png" alt="Screen Repair Service"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--spacing-lg);">
                     <h3 class="card-title">Screen Repair</h3>
                     <p class="text-gray">Cracked or damaged display? High-quality screen replacement for all brands.</p>
                     <p class="mt-lg"><strong>From ₹999</strong></p>
                 </div>
 
-                <div class="card scroll-reveal" style="animation-delay: 0.2s;">
-                    <div class="card-icon">🔋</div>
+                <div class="card scroll-reveal" style="animation-delay: 0.2s; overflow: hidden;">
+                    <img src="images/battery-replacement.png" alt="Battery Replacement Service"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--spacing-lg);">
                     <h3 class="card-title">Battery Replacement</h3>
                     <p class="text-gray">Quick battery replacement with genuine or high-capacity options.</p>
                     <p class="mt-lg"><strong>From ₹799</strong></p>
                 </div>
 
-                <div class="card scroll-reveal" style="animation-delay: 0.3s;">
-                    <div class="card-icon">💧</div>
+                <div class="card scroll-reveal" style="animation-delay: 0.3s; overflow: hidden;">
+                    <img src="images/water-damage.png" alt="Water Damage Repair Service"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--spacing-lg);">
                     <h3 class="card-title">Water Damage</h3>
                     <p class="text-gray">Professional cleaning and repair to save your device and data.</p>
                     <p class="mt-lg"><strong>From ₹1,499</strong></p>
@@ -88,6 +92,47 @@
 
             <div class="text-center mt-3xl scroll-reveal" style="animation-delay: 0.4s;">
                 <a href="services.html" class="btn btn-secondary btn-large">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Technicians Showcase -->
+    <section class="section bg-dark" style="color: var(--color-white); padding: var(--spacing-5xl) 0;">
+        <div class="container">
+            <div class="grid grid-2" style="gap: var(--spacing-4xl); align-items: center;">
+                <div class="scroll-reveal" style="animation-delay: 0.1s;">
+                    <img src="images/technician.png" alt="Expert Technician"
+                        style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl);">
+                </div>
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <h2 class="section-title"
+                        style="color: var(--color-white); text-align: left; margin-bottom: var(--spacing-xl);">Trusted
+                        by thousands.</h2>
+                    <p class="section-subtitle"
+                        style="color: rgba(255, 255, 255, 0.8); text-align: left; margin-bottom: var(--spacing-2xl);">
+                        Our certified technicians have repaired over 5,000 devices with a 98% customer satisfaction
+                        rate.</p>
+                    <div style="display: grid; gap: var(--spacing-lg);">
+                        <div>
+                            <h3
+                                style="font-size: var(--text-4xl); color: var(--accent-green); margin-bottom: var(--spacing-sm);">
+                                5000+</h3>
+                            <p style="color: rgba(255, 255, 255, 0.7);">Devices Repaired</p>
+                        </div>
+                        <div>
+                            <h3
+                                style="font-size: var(--text-4xl); color: var(--accent-green); margin-bottom: var(--spacing-sm);">
+                                98%</h3>
+                            <p style="color: rgba(255, 255, 255, 0.7);">Customer Satisfaction</p>
+                        </div>
+                        <div>
+                            <h3
+                                style="font-size: var(--text-4xl); color: var(--accent-green); margin-bottom: var(--spacing-sm);">
+                                100%</h3>
+                            <p style="color: rgba(255, 255, 255, 0.7);">Free Pickup & Delivery</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -148,6 +193,62 @@
                     <p class="feature-description">
                         Book online 24/7 or call us during business hours
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickup & Delivery Showcase -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2" style="gap: var(--spacing-4xl); align-items: center;">
+                <div class="scroll-reveal" style="animation-delay: 0.1s;">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: var(--spacing-xl);">Free
+                        pickup.<br>Free delivery.</h2>
+                    <p class="section-subtitle" style="text-align: left; margin-bottom: var(--spacing-2xl);">Experience
+                        the convenience of doorstep service. We collect your device, repair it professionally, and
+                        deliver it back — all at no extra charge.</p>
+                    <a href="booking.html" class="btn btn-primary btn-large">Schedule Pickup</a>
+                </div>
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <img src="images/pickup-delivery.png" alt="Free Pickup and Delivery Service"
+                        style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Parts Showcase -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="gap: var(--spacing-4xl); align-items: center;">
+                <div class="scroll-reveal" style="animation-delay: 0.1s;">
+                    <img src="images/quality-parts.png" alt="Genuine Quality Parts"
+                        style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+                </div>
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: var(--spacing-xl);">Only
+                        genuine<br>quality parts.</h2>
+                    <p class="section-subtitle" style="text-align: left; margin-bottom: var(--spacing-2xl);">We use only
+                        authentic, high-quality components for all repairs. Your device deserves the best, and that's
+                        what we deliver.</p>
+                    <ul style="list-style: none; margin-left: 0; padding-left: 0;">
+                        <li
+                            style="margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--accent-green); font-size: var(--text-xl);">✓</span>
+                            <span>Original manufacturer parts when available</span>
+                        </li>
+                        <li
+                            style="margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--accent-green); font-size: var(--text-xl);">✓</span>
+                            <span>Premium third-party alternatives</span>
+                        </li>
+                        <li
+                            style="margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="color: var(--accent-green); font-size: var(--text-xl);">✓</span>
+                            <span>All parts backed by warranty</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
