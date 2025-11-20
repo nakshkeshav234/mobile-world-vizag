@@ -205,7 +205,7 @@ function displayReviewSummary() {
     reviewSummary.innerHTML = html;
 }
 
-function submitBooking() {
+async function submitBooking() {
     // Save final step data
     saveCurrentStepData();
 
@@ -214,6 +214,34 @@ function submitBooking() {
     const originalText = nextBtn.textContent;
     nextBtn.disabled = true;
     nextBtn.innerHTML = '<span class="spinner" style="width: 20px; height: 20px;"></span> Processing...';
+
+    // Save to Firebase
+    let firebaseSaved = false;
+    if (window.FirebaseDB) {
+        try {
+            const result = await window.FirebaseDB.saveBooking(formData);
+            if (result.success) {
+                firebaseSaved = true;
+                console.log('Booking saved to database!');
+            }
+        } catch (error) {
+            console.error('Firebase save error:', error);
+        }
+    }
+
+    // Send email notification
+    let emailSent = false;
+    if (window.EmailService) {
+        try {
+            const result = await window.EmailService.sendBookingEmail(formData);
+            if (result.success) {
+                emailSent = true;
+                console.log('Email notification sent!');
+            }
+        } catch (error) {
+            console.error('Email send error:', error);
+        }
+    }
 
     // Simulate submission delay
     setTimeout(() => {
@@ -237,7 +265,15 @@ function submitBooking() {
         nextBtn.textContent = originalText;
 
         // Show success toast
-        window.MobileWorld.showToast('Booking submitted successfully!', 'success');
+        let message = 'Booking submitted successfully!';
+        if (firebaseSaved && emailSent) {
+            message = 'Booking saved and email notification sent!';
+        } else if (firebaseSaved) {
+            message = 'Booking saved to database!';
+        } else if (emailSent) {
+            message = 'Email notification sent!';
+        }
+        window.MobileWorld.showToast(message, 'success');
 
         // Trigger confetti animation! 🎉
         if (window.AnimationEngine && window.AnimationEngine.Confetti) {
