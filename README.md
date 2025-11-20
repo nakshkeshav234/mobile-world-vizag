@@ -32,8 +32,7 @@ Professional mobile phone repair booking platform for Visakhapatnam, Andhra Prad
 Opp. Amaravathi Hotel, Daba Gardens  
 Visakhapatnam, Andhra Pradesh 530020
 
-- Sanjay Agarwal: +91 9246620123
-- Sunil Agarwal: +91 9848039930
+
 
 ## License
 
