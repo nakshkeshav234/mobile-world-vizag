@@ -350,31 +350,59 @@ p {
 }
 
 /* ===================================
-   RESPONSIVE
+   RESPONSIVE - MOBILE FIRST
    =================================== */
+
+/* Tablet - 1068px and below */
 @media (max-width: 1068px) {
     :root {
         --text-hero: 4rem;
         --text-5xl: 2.5rem;
         --text-4xl: 2rem;
+        --text-3xl: 1.75rem;
+        --spacing-5xl: 6rem;
+        --spacing-4xl: 4rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+        max-width: 100%;
     }
 
     .grid-2,
     .grid-3,
     .grid-4 {
         grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
     }
 
-    .container {
-        padding: 0 var(--spacing-lg);
+    .section {
+        padding: var(--spacing-4xl) 0;
     }
 }
 
+/* Mobile - 734px and below */
 @media (max-width: 734px) {
     :root {
         --text-hero: 2.5rem;
         --text-5xl: 2rem;
         --text-4xl: 1.75rem;
+        --text-3xl: 1.5rem;
+        --text-2xl: 1.375rem;
+        --text-xl: 1.125rem;
+        --text-lg: 1rem;
+        --spacing-5xl: 4rem;
+        --spacing-4xl: 3rem;
+        --spacing-3xl: 2.5rem;
+        --spacing-2xl: 2rem;
+    }
+
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
     }
 
     .section {
@@ -383,5 +411,60 @@ p {
 
     .section-hero {
         min-height: 80vh;
+        padding-top: 60px;
+    }
+
+    h1 {
+        line-height: 1.1;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    h2 {
+        line-height: 1.15;
+        margin-bottom: var(--spacing-md);
+    }
+
+    p {
+        font-size: var(--text-base);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .grid {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+    :root {
+        --text-hero: 2rem;
+        --text-5xl: 1.75rem;
+        --text-4xl: 1.5rem;
+        --text-3xl: 1.375rem;
+        --text-2xl: 1.25rem;
+        --spacing-5xl: 3rem;
+        --spacing-4xl: 2.5rem;
+        --spacing-3xl: 2rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .section-hero {
+        min-height: 70vh;
+    }
+
+    h1 br,
+    h2 br {
+        display: none;
     }
 }
