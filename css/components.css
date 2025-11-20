@@ -40,7 +40,7 @@
 }
 
 .navbar-logo img {
-    height: 32px;
+    height: 40px;
     width: auto;
     display: block;
 }
@@ -634,7 +634,7 @@
     }
 
     .navbar-logo img {
-        height: 28px;
+        height: 32px;
     }
 
     .hero-content {
