@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book mobile phone repair service online in Visakhapatnam. Free pickup and delivery.">
+    <title>Book Repair Service - Mobile World | Visakhapatnam</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+
+    <style>
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 120px;
+            padding-bottom: var(--spacing-4xl);
+        }
+
+        .booking-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            padding: var(--spacing-3xl);
+            animation: scaleInBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-3xl);
+            position: relative;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gray-200);
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto var(--spacing-sm);
+            transition: all var(--transition-base);
+        }
+
+        .step.active .step-number {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step.completed .step-number {
+            background: var(--success-gradient);
+            color: white;
+        }
+
+        .step-label {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn var(--transition-base) ease-out;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .success-animation {
+            text-align: center;
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .success-icon {
+            font-size: 80px;
+            animation: scaleIn var(--transition-slow) ease-out;
+        }
+
+        @media (max-width: 640px) {
+            .booking-card {
+                padding: var(--spacing-xl);
+            }
+
+            .step-label {
+                font-size: var(--text-xs);
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">📱 Mobile World</a>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="booking.html" class="active">Book Repair</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+    <div class="booking-container container">
+        <div class="booking-card">
+            <h1 class="text-center mb-sm">Book Repair Service</h1>
+            <p class="text-center text-gray mb-2xl">Fill in the details below and we'll contact you shortly</p>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator" id="stepIndicator">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Personal Info</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Device Details</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Pickup Details</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="bookingForm">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <h3 class="mb-lg">Personal Information</h3>
+
+                    <div class="form-group">
+                        <label for="customerName" class="form-label required">Full Name</label>
+                        <input type="text" id="customerName" name="customerName" class="form-input"
+                            placeholder="Enter your full name" required>
+                        <div class="form-error hidden" id="customerNameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerPhone" class="form-label required">Phone Number</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" class="form-input"
+                                placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                            <div class="form-error hidden" id="customerPhoneError">Enter valid 10-digit number</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerEmail" class="form-label">Email (Optional)</label>
+                            <input type="email" id="customerEmail" name="customerEmail" class="form-input"
+                                placeholder="your@email.com">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Device Details -->
+                <div class="form-step" data-step="2">
+                    <h3 class="mb-lg">Device Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="deviceBrand" class="form-label required">Phone Brand</label>
+                            <select id="deviceBrand" name="deviceBrand" class="form-select" required>
+                                <option value="">Select brand</option>
+                                <option value="Apple">Apple (iPhone)</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="OnePlus">OnePlus</option>
+                                <option value="Xiaomi">Xiaomi (Mi/Redmi/Poco)</option>
+                                <option value="Vivo">Vivo</option>
+                                <option value="Oppo">Oppo</option>
+                                <option value="Realme">Realme</option>
+                                <option value="Motorola">Motorola</option>
+                                <option value="Google">Google Pixel</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="form-error hidden" id="deviceBrandError">Please select a brand</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deviceModel" class="form-label required">Model Name</label>
+                            <input type="text" id="deviceModel" name="deviceModel" class="form-input"
+                                placeholder="e.g., iPhone 13, Galaxy S21" required>
+                            <div class="form-error hidden" id="deviceModelError">Please enter model name</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueType" class="form-label required">Type of Issue</label>
+                        <select id="issueType" name="issueType" class="form-select" required>
+                            <option value="">Select issue type</option>
+                            <option value="Screen Repair">Screen Repair/Replacement</option>
+                            <option value="Battery">Battery Replacement</option>
+                            <option value="Water Damage">Water Damage</option>
+                            <option value="Charging Issue">Charging Port Issue</option>
+                            <option value="Speaker/Mic">Speaker/Microphone Issue</option>
+                            <option value="Camera">Camera Problem</option>
+                            <option value="Software">Software/Performance Issue</option>
+                            <option value="Button">Power/Volume Button Issue</option>
+                            <option value="Other">Other Issue</option>
+                        </select>
+                        <div class="form-error hidden" id="issueTypeError">Please select issue type</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueDescription" class="form-label required">Describe the Problem</label>
+                        <textarea id="issueDescription" name="issueDescription" class="form-textarea"
+                            placeholder="Please describe the issue in detail..." required></textarea>
+                        <div class="form-help">Provide as much detail as possible for accurate diagnosis</div>
+                        <div class="form-error hidden" id="issueDescriptionError">Please describe the issue</div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Pickup Details -->
+                <div class="form-step" data-step="3">
+                    <h3 class="mb-lg">Pickup Information</h3>
+
+                    <div class="form-group">
+                        <label for="pickupAddress" class="form-label required">Pickup Address</label>
+                        <textarea id="pickupAddress" name="pickupAddress" class="form-textarea"
+                            placeholder="Complete address with landmarks" required></textarea>
+                        <div class="form-help">Include street name, area, and nearby landmarks</div>
+                        <div class="form-error hidden" id="pickupAddressError">Please provide pickup address</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate" class="form-label required">Preferred Pickup Date</label>
+                            <input type="date" id="pickupDate" name="pickupDate" class="form-input" required>
+                            <div class="form-error hidden" id="pickupDateError">Please select a date</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pickupTime" class="form-label required">Preferred Time Slot</label>
+                            <select id="pickupTime" name="pickupTime" class="form-select" required>
+                                <option value="">Select time</option>
+                                <option value="10AM-12PM">10:00 AM - 12:00 PM</option>
+                                <option value="12PM-2PM">12:00 PM - 2:00 PM</option>
+                                <option value="2PM-4PM">2:00 PM - 4:00 PM</option>
+                                <option value="4PM-6PM">4:00 PM - 6:00 PM</option>
+                                <option value="6PM-8PM">6:00 PM - 8:00 PM</option>
+                            </select>
+                            <div class="form-error hidden" id="pickupTimeError">Please select time slot</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalNotes" class="form-label">Additional Notes (Optional)</label>
+                        <textarea id="additionalNotes" name="additionalNotes" class="form-textarea"
+                            placeholder="Any special instructions or requests..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 4: Confirmation -->
+                <div class="form-step" data-step="4">
+                    <div class="success-animation hidden" id="successMessage">
+                        <div class="success-icon">✅</div>
+                        <h2 class="mb-md">Booking Confirmed!</h2>
+                        <p class="text-gray mb-xl">Thank you for choosing Mobile World. We'll contact you shortly to
+                            confirm your pickup.</p>
+                        <div class="card" style="text-align: left; margin-bottom: var(--spacing-xl);">
+                            <h4 class="mb-md">Your Booking Details:</h4>
+                            <div id="bookingSummary"></div>
+                        </div>
+                        <div class="button-group">
+                            <a href="https://wa.me/919246620123" class="btn btn-primary">
+                                💬 Chat on WhatsApp
+                            </a>
+                            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                        </div>
+                    </div>
+
+                    <div id="confirmationContent">
+                        <h3 class="mb-lg">Review Your Booking</h3>
+                        <div class="card mb-xl">
+                            <div id="reviewSummary"></div>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="termsAgree" required>
+                            <label for="termsAgree">
+                                I agree that Mobile World may contact me and I have provided accurate information
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="button-group" id="navigationButtons">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">
+                        ← Previous
+                    </button>
+                    <button type="button" class="btn btn-primary btn-block" id="nextBtn">
+                        Next →
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📱 Mobile World</h3>
+                    <p>Your trusted partner for all mobile phone repair needs in Visakhapatnam.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Phone: <a href="tel:9246620123">+91 9246620123</a><br>
+                        <a href="tel:9848039930">+91 9848039930</a>
+                    </p>
+                    <p>Opp. Amaravathi Hotel,<br>
+                        Daba Gardens, Visakhapatnam</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mobile World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

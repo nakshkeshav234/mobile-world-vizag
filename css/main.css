@@ -1,0 +1,387 @@
+/* ===================================
+   MOBILE WORLD - Apple-Style Design System
+   Premium Black & White Aesthetic
+   =================================== */
+
+/* ===================================
+   COLOR PALETTE - PREMIUM B&W
+   =================================== */
+:root {
+    /* Primary Colors - Black & White */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-off-white: #f5f5f7;
+    --color-light-gray: #f2f2f2;
+
+    /* Gray Scale */
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+
+    /* Accent Colors - Minimal & Impactful */
+    --accent-blue: #0071e3;
+    --accent-blue-dark: #0077ED;
+    --accent-green: #00D4AA;
+    --accent-orange: #FF6B00;
+
+    /* Apple-style Gradients */
+    --gradient-dark: linear-gradient(135deg, #1d1d1f 0%, #000000 100%);
+    --gradient-light: linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+    --gradient-accent: linear-gradient(135deg, #0071e3 0%, #0077ED 100%);
+
+    /* Typography - San Francisco inspired */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Font Sizes - Apple Scale */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 2rem;
+    /* 32px */
+    --text-4xl: 2.5rem;
+    /* 40px */
+    --text-5xl: 3.5rem;
+    /* 56px */
+    --text-6xl: 4.5rem;
+    /* 72px */
+    --text-hero: 5.5rem;
+    /* 88px */
+
+    /* Spacing - 8pt Grid */
+    --spacing-xs: 0.25rem;
+    /* 4px */
+    --spacing-sm: 0.5rem;
+    /* 8px */
+    --spacing-md: 1rem;
+    /* 16px */
+    --spacing-lg: 1.5rem;
+    /* 24px */
+    --spacing-xl: 2rem;
+    /* 32px */
+    --spacing-2xl: 3rem;
+    /* 48px */
+    --spacing-3xl: 4rem;
+    /* 64px */
+    --spacing-4xl: 6rem;
+    /* 96px */
+    --spacing-5xl: 8rem;
+    /* 128px */
+
+    /* Border Radius - Apple Style */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-full: 9999px;
+
+    /* Shadows - Subtle & Refined */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    /* Transitions - Smooth like Apple */
+    --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Z-Index */
+    --z-base: 1;
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal: 1050;
+}
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    color: var(--gray-900);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* ===================================
+   TYPOGRAPHY - APPLE STYLE
+   =================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.0834933333;
+    letter-spacing: -0.003em;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: var(--text-hero);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+}
+
+h2 {
+    font-size: var(--text-5xl);
+    font-weight: 600;
+    letter-spacing: -0.009em;
+}
+
+h3 {
+    font-size: var(--text-4xl);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+}
+
+p {
+    font-size: var(--text-lg);
+    line-height: 1.47059;
+    letter-spacing: -0.022em;
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-md);
+}
+
+.text-large {
+    font-size: var(--text-2xl);
+    line-height: 1.38105;
+    font-weight: 400;
+    letter-spacing: 0.011em;
+}
+
+.text-hero {
+    font-size: var(--text-hero);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+}
+
+/* ===================================
+   LAYOUT HELPERS
+   =================================== */
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+.container-wide {
+    max-width: 1440px;
+}
+
+.section {
+    padding: var(--spacing-5xl) 0;
+}
+
+.section-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================================
+   GRID SYSTEM
+   =================================== */
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===================================
+   UTILITIES
+   =================================== */
+.text-center {
+    text-align: center;
+}
+
+.text-black {
+    color: var(--color-black);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.text-gray {
+    color: var(--gray-600);
+}
+
+.text-accent {
+    color: var(--accent-blue);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.bg-black {
+    background-color: var(--color-black);
+}
+
+.bg-light {
+    background-color: var(--color-off-white);
+}
+
+.bg-dark {
+    background-color: var(--gray-900);
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+/* Spacing */
+.mt-sm {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+    margin-top: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.mt-2xl {
+    margin-top: var(--spacing-2xl);
+}
+
+.mt-3xl {
+    margin-top: var(--spacing-3xl);
+}
+
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+.mb-2xl {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.mb-3xl {
+    margin-bottom: var(--spacing-3xl);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 1068px) {
+    :root {
+        --text-hero: 4rem;
+        --text-5xl: 2.5rem;
+        --text-4xl: 2rem;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+}
+
+@media (max-width: 734px) {
+    :root {
+        --text-hero: 2.5rem;
+        --text-5xl: 2rem;
+        --text-4xl: 1.75rem;
+    }
+
+    .section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .section-hero {
+        min-height: 80vh;
+    }
+}

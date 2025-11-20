@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Mobile World for mobile phone repairs in Visakhapatnam. Free pickup and delivery service available.">
+    <title>Contact Us - Mobile World | Visakhapatnam</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">📱 Mobile World</a>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="booking.html">Book Repair</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section"
+        style="background: var(--primary-gradient); color: white; padding-top: 120px; padding-bottom: var(--spacing-2xl);">
+        <div class="container text-center">
+            <h1 class="mb-md" style="color: white;">Contact Us</h1>
+            <p style="font-size: var(--text-xl);">We're here to help with all your mobile repair needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-3">
+                <a href="tel:9246620123" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">📞
+                    </div>
+                    <h3 class="card-title">Call Us</h3>
+                    <p class="text-gray">Sanjay Agarwal</p>
+                    <p class="font-bold text-primary">+91 9246620123</p>
+                </a>
+
+                <a href="tel:9848039930" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">📞
+                    </div>
+                    <h3 class="card-title">Call Us</h3>
+                    <p class="text-gray">Sunil Agarwal</p>
+                    <p class="font-bold text-primary">+91 9848039930</p>
+                </a>
+
+                <a href="https://wa.me/919246620123" class="card" style="text-decoration: none; color: inherit;"
+                    target="_blank">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">💬
+                    </div>
+                    <h3 class="card-title">WhatsApp</h3>
+                    <p class="text-gray">Quick response</p>
+                    <p class="font-bold text-primary">Chat Now</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Info -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="grid grid-2 gap-xl">
+                <!-- Contact Form -->
+                <div class="card">
+                    <h2 class="mb-md">Send Us a Message</h2>
+                    <p class="text-gray mb-lg">Have a question? Fill out the form below and we'll get back to you soon.
+                    </p>
+
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label required">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label required">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email (Optional)</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label required">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="How can we help you?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <div class="card mb-lg">
+                        <h3 class="mb-md">📍 Visit Our Shop</h3>
+                        <p class="mb-sm"><strong>Mobile World</strong></p>
+                        <p class="text-gray mb-md">
+                            Opp. Amaravathi Hotel<br>
+                            Daba Gardens, Main Road<br>
+                            Visakhapatnam, Andhra Pradesh<br>
+                            PIN: 530020
+                        </p>
+                        <a href="https://maps.google.com/?q=Daba+Gardens+Visakhapatnam" target="_blank"
+                            class="btn btn-secondary">
+                            Get Directions
+                        </a>
+                    </div>
+
+                    <div class="card mb-lg">
+                        <h3 class="mb-md">🕒 Operating Hours</h3>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="padding: 0.5rem 0;"><strong>Monday - Saturday</strong></td>
+                                <td style="text-align: right; padding: 0.5rem 0;">10:00 AM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0;"><strong>Sunday</strong></td>
+                                <td style="text-align: right; padding: 0.5rem 0;">11:00 AM - 6:00 PM</td>
+                            </tr>
+                        </table>
+                        <p class="text-gray text-sm mt-md">
+                            * Pickup & delivery service available during operating hours
+                        </p>
+                    </div>
+
+                    <div class="card" style="background: var(--success-gradient); color: white;">
+                        <h3 class="mb-md" style="color: white;">💡 Quick Tip</h3>
+                        <p>
+                            For faster service, book your repair online and we'll come to your doorstep to collect your
+                            phone!
+                        </p>
+                        <a href="booking.html" class="btn mt-md"
+                            style="background: white; color: var(--primary-color);">
+                            Book Online Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-xl">Find Us on Map</h2>
+            <div
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.835!2d83.3015!3d17.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQyJzAwLjAiTiA4M8KwMTgnMDUuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="text-center text-gray mt-md">Daba Gardens, Main Road, Visakhapatnam - 530020</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="text-center mb-3xl">Frequently Asked Questions</h2>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card mb-lg">
+                    <h4 class="mb-sm">Is the pickup and delivery service really free?</h4>
+                    <p class="text-gray">Yes! We provide completely free pickup and delivery service within
+                        Visakhapatnam city limits.</p>
+                </div>
+
+                <div class="card mb-lg">
+                    <h4 class="mb-sm">How long does a typical repair take?</h4>
+                    <p class="text-gray">Most repairs are completed within 24-48 hours. Some repairs like screen
+                        replacement can be done the same day depending on parts availability.</p>
+                </div>
+
+                <div class="card mb-lg">
+                    <h4 class="mb-sm">Do you provide warranty on repairs?</h4>
+                    <p class="text-gray">Yes! All our repairs come with 3-6 months warranty depending on the type of
+                        repair and parts used.</p>
+                </div>
+
+                <div class="card mb-lg">
+                    <h4 class="mb-sm">What brands do you repair?</h4>
+                    <p class="text-gray">We repair all major brands including Apple, Samsung, OnePlus, Xiaomi, Vivo,
+                        Oppo, Realme, Motorola, and more.</p>
+                </div>
+
+                <div class="card mb-lg">
+                    <h4 class="mb-sm">Do I need to pay any advance?</h4>
+                    <p class="text-gray">No advance payment required. You pay only after the repair is completed and
+                        you're satisfied with the service.</p>
+                </div>
+
+                <div class="card">
+                    <h4 class="mb-sm">What if my phone can't be repaired?</h4>
+                    <p class="text-gray">We'll diagnose your phone for free and inform you if it's repairable. If it
+                        can't be repaired, there's no charge for diagnosis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📱 Mobile World</h3>
+                    <p>Your trusted partner for all mobile phone repair needs in Visakhapatnam.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html">Book Repair</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Phone: <a href="tel:9246620123">+91 9246620123</a><br>
+                        <a href="tel:9848039930">+91 9848039930</a>
+                    </p>
+                    <p>Opp. Amaravathi Hotel, Daba Gardens<br>
+                        Visakhapatnam, AP 530020</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mobile World. All rights reserved. | Sanjay Agarwal & Sunil Agarwal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            const whatsappMessage = `*Contact Form Inquiry*\n\nName: ${formData.name}\nPhone: ${formData.phone}\n${formData.email ? `Email: ${formData.email}\n` : ''}Message: ${formData.message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            window.open(`https://wa.me/919246620123?text=${encodedMessage}`, '_blank');
+
+            window.MobileWorld.showToast('Message sent! We\'ll contact you soon.', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
